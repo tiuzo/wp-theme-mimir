@@ -24,23 +24,25 @@ global $actuate_loop_count;
                 <div class="loop-thumbnail-section">
                     <div class="loop-thumbnail-overlay"  style="<?php if($image_big) { echo "background-image:url('". $src_big ."');";} ?>">
                     </div>
-                    <div class="loop-thumbnail-post-category">
-                    <?php
-                        $actuate_loop_categories = get_the_category();
-                        if($actuate_loop_categories) {
-                            $output = '';
-                            $item = 1;
-                            foreach($actuate_loop_categories as $cat) {
-                                if($item > 1) {
-                                    $output .= ',';
+                    <?php if(get_the_tags()): ?>
+                        <div class="loop-thumbnail-post-tag">
+                        <?php
+                            $actuate_loop_tags = get_the_tags();
+                            if($actuate_loop_tags) {
+                                $output = '';
+                                $item = 1;
+                                foreach($actuate_loop_tags as $cat) {
+                                    if($item > 1) {
+                                        $output .= ',';
+                                    }
+                                    $item++;
+                                    $output .= $cat->name;
                                 }
-                                $item++;
-                                $output .= $cat->name;
+                                echo trim($output, ' ');
                             }
-                            echo trim($output, ' ');
-                        }
-                    ?>
-                    </div>
+                        ?>
+                        </div>
+                    <?php endif ?>
                 </div>
             <?php endif ?>
             <div class="loop-content-section">

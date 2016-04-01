@@ -1513,7 +1513,7 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.loop-thumbnail-post-category {
+.loop-thumbnail-post-tag {
   font-size: 12px;
 }
 .read-more {
@@ -2279,7 +2279,7 @@ body {
 .orange .loop-thumbnail-overlay:hover:after {
   background-color: rgba(240, 240, 240, 0.2);
 }
-.orange .loop-thumbnail-post-category {
+.orange .loop-thumbnail-post-tag {
   position: absolute;
   top: 5px;
   right: 5px;
